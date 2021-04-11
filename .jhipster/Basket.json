@@ -1,0 +1,37 @@
+{
+  "name": "Basket",
+  "fields": [
+    {
+      "fieldName": "idBasket",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "basket",
+      "relationshipName": "user",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "idBasket",
+      "relationshipName": "idProduct",
+      "otherEntityField": "productID",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "basket",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210411134842"
+}

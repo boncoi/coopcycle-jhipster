@@ -1,0 +1,97 @@
+<div>
+  <h2 id="page-heading" data-cy="AdministratorHeading">
+    <span jhiTranslate="coopcycleApp.administrator.home.title">Administrators</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="coopcycleApp.administrator.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-administrator"
+        [routerLink]="['/administrator/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="coopcycleApp.administrator.home.createLabel"> Create a new Administrator </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="administrators?.length === 0">
+    <span jhiTranslate="coopcycleApp.administrator.home.notFound">No administrators found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="administrators && administrators.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="coopcycleApp.administrator.levelOfAuthority">Level Of Authority</span></th>
+          <th scope="col"><span jhiTranslate="coopcycleApp.administrator.imageProfil">Image Profil</span></th>
+          <th scope="col"><span jhiTranslate="coopcycleApp.administrator.mobilePhone">Mobile Phone</span></th>
+          <th scope="col"><span jhiTranslate="coopcycleApp.administrator.user">User</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let administrator of administrators; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/administrator', administrator.id, 'view']">{{ administrator.id }}</a>
+          </td>
+          <td>{{ administrator.levelOfAuthority }}</td>
+          <td>
+            <a *ngIf="administrator.imageProfil" (click)="openFile(administrator.imageProfil, administrator.imageProfilContentType)">
+              <img
+                [src]="'data:' + administrator.imageProfilContentType + ';base64,' + administrator.imageProfil"
+                style="max-height: 30px"
+                alt="administrator image"
+              />
+            </a>
+            <span *ngIf="administrator.imageProfil"
+              >{{ administrator.imageProfilContentType }}, {{ byteSize(administrator.imageProfil) }}</span
+            >
+          </td>
+          <td>{{ administrator.mobilePhone }}</td>
+          <td>
+            {{ administrator.user?.login }}
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/administrator', administrator.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/administrator', administrator.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(administrator)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

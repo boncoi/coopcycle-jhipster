@@ -1,0 +1,34 @@
+{
+  "name": "Cooperative",
+  "fields": [
+    {
+      "fieldName": "cooperativeName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "merchant",
+      "otherEntityRelationshipName": "cooperative",
+      "relationshipName": "merchant"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "courier",
+      "otherEntityRelationshipName": "cooperative",
+      "relationshipName": "courier"
+    }
+  ],
+  "entityTableName": "cooperative",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210411134840"
+}

@@ -1,0 +1,158 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-administrator-heading"
+        data-cy="AdministratorCreateUpdateHeading"
+        jhiTranslate="coopcycleApp.administrator.home.createOrEditLabel"
+      >
+        Create or edit a Administrator
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="coopcycleApp.administrator.levelOfAuthority" for="field_levelOfAuthority"
+            >Level Of Authority</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="levelOfAuthority"
+            id="field_levelOfAuthority"
+            data-cy="levelOfAuthority"
+            formControlName="levelOfAuthority"
+          />
+          <div
+            *ngIf="
+              editForm.get('levelOfAuthority')!.invalid &&
+              (editForm.get('levelOfAuthority')!.dirty || editForm.get('levelOfAuthority')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('levelOfAuthority')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('levelOfAuthority')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="coopcycleApp.administrator.imageProfil" for="field_imageProfil"
+            >Image Profil</label
+          >
+          <div>
+            <img
+              [src]="'data:' + editForm.get('imageProfilContentType')!.value + ';base64,' + editForm.get('imageProfil')!.value"
+              style="max-height: 100px"
+              *ngIf="editForm.get('imageProfil')!.value"
+              alt="administrator image"
+            />
+            <div *ngIf="editForm.get('imageProfil')!.value" class="form-text text-danger clearfix">
+              <span class="pull-left"
+                >{{ editForm.get('imageProfilContentType')!.value }}, {{ byteSize(editForm.get('imageProfil')!.value) }}</span
+              >
+              <button
+                type="button"
+                (click)="clearInputImage('imageProfil', 'imageProfilContentType', 'file_imageProfil')"
+                class="btn btn-secondary btn-xs pull-right"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_imageProfil"
+              data-cy="imageProfil"
+              (change)="setFileData($event, 'imageProfil', true)"
+              accept="image/*"
+              jhiTranslate="entity.action.addimage"
+            />
+          </div>
+          <input
+            type="hidden"
+            class="form-control"
+            name="imageProfil"
+            id="field_imageProfil"
+            data-cy="imageProfil"
+            formControlName="imageProfil"
+          />
+          <input
+            type="hidden"
+            class="form-control"
+            name="imageProfilContentType"
+            id="field_imageProfilContentType"
+            formControlName="imageProfilContentType"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="coopcycleApp.administrator.mobilePhone" for="field_mobilePhone"
+            >Mobile Phone</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="mobilePhone"
+            id="field_mobilePhone"
+            data-cy="mobilePhone"
+            formControlName="mobilePhone"
+          />
+          <div *ngIf="editForm.get('mobilePhone')!.invalid && (editForm.get('mobilePhone')!.dirty || editForm.get('mobilePhone')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('mobilePhone')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="coopcycleApp.administrator.user" for="field_user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption"
+              *ngFor="let userOption of usersSharedCollection; trackBy: trackUserById"
+            >
+              {{ userOption.login }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+{
+  "name": "Product",
+  "fields": [
+    {
+      "fieldName": "productID",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "productName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "productType",
+      "fieldType": "ProductType",
+      "fieldValues": "FOOD,DRINK"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Float",
+      "fieldValidateRules": ["min", "required"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "productImage",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "merchant",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "merchant",
+      "otherEntityField": "merchantName"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "basket",
+      "otherEntityRelationshipName": "idProduct",
+      "relationshipName": "idBasket",
+      "otherEntityField": "idBasket",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "product",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210411134843"
+}

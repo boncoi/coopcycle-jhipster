@@ -1,0 +1,9 @@
+{
+  "coopcycleApp": {
+    "ProductType": {
+      "null": "",
+      "FOOD": "FOOD",
+      "DRINK": "DRINK"
+    }
+  }
+}

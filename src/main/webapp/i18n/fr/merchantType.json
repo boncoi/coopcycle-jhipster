@@ -1,0 +1,9 @@
+{
+  "coopcycleApp": {
+    "MerchantType": {
+      "null": "",
+      "RESTAURANT": "RESTAURANT",
+      "CRAFTMAN": "CRAFTMAN"
+    }
+  }
+}

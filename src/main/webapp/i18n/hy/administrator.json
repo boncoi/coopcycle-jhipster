@@ -1,0 +1,27 @@
+{
+  "coopcycleApp": {
+    "administrator": {
+      "home": {
+        "title": "Administrators",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Ստեղծել նոր Administrator",
+        "createOrEditLabel": "Ստեղծել կամ փոփոխել Administrator",
+        "notFound": "No Administrators found"
+      },
+      "created": "Նոր Administrator ստեղծված է {{ param }} նունացուցիչով",
+      "updated": "Administrator թարմացվաց է {{ param }} նունացուցիչով",
+      "deleted": "Administrator հեռացված է {{ param }}  նունացուցիչով",
+      "delete": {
+        "question": "Դուք վստահ ե՞ք, որ ցանկանում եք հեռացնել Administrator {{ id }}?"
+      },
+      "detail": {
+        "title": "Administrator"
+      },
+      "id": "ID",
+      "levelOfAuthority": "Level Of Authority",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User"
+    }
+  }
+}

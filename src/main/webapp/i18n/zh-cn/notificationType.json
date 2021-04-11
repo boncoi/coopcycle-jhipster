@@ -1,0 +1,10 @@
+{
+  "coopcycleApp": {
+    "NotificationType": {
+      "null": "",
+      "SMS": "SMS",
+      "EMAIL": "EMAIL",
+      "INAPP": "INAPP"
+    }
+  }
+}

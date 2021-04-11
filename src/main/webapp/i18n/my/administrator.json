@@ -1,0 +1,27 @@
+{
+  "coopcycleApp": {
+    "administrator": {
+      "home": {
+        "title": "Administrators",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Administrator အသစ်ထည့်မည်",
+        "createOrEditLabel": "Administrator အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Administrators found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Administrator အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Administrator တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Administrator တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Administrator {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Administrator"
+      },
+      "id": "ID",
+      "levelOfAuthority": "Level Of Authority",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User"
+    }
+  }
+}

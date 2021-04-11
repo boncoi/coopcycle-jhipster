@@ -1,0 +1,26 @@
+{
+  "coopcycleApp": {
+    "notification": {
+      "home": {
+        "title": "Notifications",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Създайте нов Notification",
+        "createOrEditLabel": "Създайте или редактирайте Notification",
+        "notFound": "Notifications не са намерени"
+      },
+      "created": "Създаден е нов Notification с идентификатор {{ param }}",
+      "updated": "Notification с идентификатор {{ param }} e oбновен",
+      "deleted": "Notification с идентификатор {{ param }} е изтрит",
+      "delete": {
+        "question": "Наистина ли искате да изтриете Notification {{ id }}?"
+      },
+      "detail": {
+        "title": "Notification"
+      },
+      "id": "ID",
+      "date": "Date",
+      "message": "Message",
+      "notifType": "Notif Type"
+    }
+  }
+}

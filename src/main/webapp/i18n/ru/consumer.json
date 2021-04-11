@@ -1,0 +1,27 @@
+{
+  "coopcycleApp": {
+    "consumer": {
+      "home": {
+        "title": "Consumers",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Consumer",
+        "createOrEditLabel": "Создать или отредактировать Consumer",
+        "notFound": "Consumers не найдено"
+      },
+      "created": "Новый Consumer создан с идентификатором {{ param }}",
+      "updated": "Consumer обновлен с идентификатором {{ param }}",
+      "deleted": "Consumer удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Consumer {{ id }}?"
+      },
+      "detail": {
+        "title": "Consumer"
+      },
+      "id": "ID",
+      "address": "Address",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User"
+    }
+  }
+}

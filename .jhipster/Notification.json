@@ -1,0 +1,31 @@
+{
+  "name": "Notification",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "notifType",
+      "fieldType": "NotificationType",
+      "fieldValues": "SMS,EMAIL,INAPP"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "notification",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210411134845"
+}

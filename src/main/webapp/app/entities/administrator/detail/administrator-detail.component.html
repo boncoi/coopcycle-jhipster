@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="administrator">
+      <h2 data-cy="administratorDetailsHeading"><span jhiTranslate="coopcycleApp.administrator.detail.title">Administrator</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ administrator.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.administrator.levelOfAuthority">Level Of Authority</span></dt>
+        <dd>
+          <span>{{ administrator.levelOfAuthority }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.administrator.imageProfil">Image Profil</span></dt>
+        <dd>
+          <div *ngIf="administrator.imageProfil">
+            <a (click)="openFile(administrator.imageProfil, administrator.imageProfilContentType)">
+              <img
+                [src]="'data:' + administrator.imageProfilContentType + ';base64,' + administrator.imageProfil"
+                style="max-width: 100%"
+                alt="administrator image"
+              />
+            </a>
+            {{ administrator.imageProfilContentType }}, {{ byteSize(administrator.imageProfil) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.administrator.mobilePhone">Mobile Phone</span></dt>
+        <dd>
+          <span>{{ administrator.mobilePhone }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.administrator.user">User</span></dt>
+        <dd>
+          <span>{{ administrator.user?.login }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/administrator', administrator.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

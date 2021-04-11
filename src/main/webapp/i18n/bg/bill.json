@@ -1,0 +1,28 @@
+{
+  "coopcycleApp": {
+    "bill": {
+      "home": {
+        "title": "Bills",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Създайте нов Bill",
+        "createOrEditLabel": "Създайте или редактирайте Bill",
+        "notFound": "Bills не са намерени"
+      },
+      "created": "Създаден е нов Bill с идентификатор {{ param }}",
+      "updated": "Bill с идентификатор {{ param }} e oбновен",
+      "deleted": "Bill с идентификатор {{ param }} е изтрит",
+      "delete": {
+        "question": "Наистина ли искате да изтриете Bill {{ id }}?"
+      },
+      "detail": {
+        "title": "Bill"
+      },
+      "id": "ID",
+      "date": "Date",
+      "payment": "Payment",
+      "status": "Status",
+      "totalPrice": "Total Price",
+      "idBasket": "Id Basket"
+    }
+  }
+}

@@ -1,0 +1,159 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-product-heading" data-cy="ProductCreateUpdateHeading" jhiTranslate="coopcycleApp.product.home.createOrEditLabel">
+        Create or edit a Product
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="coopcycleApp.product.productID" for="field_productID">Product ID</label>
+          <input type="text" class="form-control" name="productID" id="field_productID" data-cy="productID" formControlName="productID" />
+          <div *ngIf="editForm.get('productID')!.invalid && (editForm.get('productID')!.dirty || editForm.get('productID')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('productID')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="coopcycleApp.product.productName" for="field_productName">Product Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="productName"
+            id="field_productName"
+            data-cy="productName"
+            formControlName="productName"
+          />
+          <div *ngIf="editForm.get('productName')!.invalid && (editForm.get('productName')!.dirty || editForm.get('productName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('productName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="coopcycleApp.product.productType" for="field_productType">Product Type</label>
+          <select class="form-control" name="productType" formControlName="productType" id="field_productType" data-cy="productType">
+            <option [ngValue]="null">{{ 'coopcycleApp.ProductType.null' | translate }}</option>
+            <option value="FOOD">{{ 'coopcycleApp.ProductType.FOOD' | translate }}</option>
+            <option value="DRINK">{{ 'coopcycleApp.ProductType.DRINK' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="coopcycleApp.product.price" for="field_price">Price</label>
+          <input type="number" class="form-control" name="price" id="field_price" data-cy="price" formControlName="price" />
+          <div *ngIf="editForm.get('price')!.invalid && (editForm.get('price')!.dirty || editForm.get('price')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('price')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('price')?.errors?.min"
+              jhiTranslate="entity.validation.min"
+              [translateValues]="{ min: 0 }"
+            >
+              This field should be at least 0.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('price')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="coopcycleApp.product.productImage" for="field_productImage">Product Image</label>
+          <div>
+            <img
+              [src]="'data:' + editForm.get('productImageContentType')!.value + ';base64,' + editForm.get('productImage')!.value"
+              style="max-height: 100px"
+              *ngIf="editForm.get('productImage')!.value"
+              alt="product image"
+            />
+            <div *ngIf="editForm.get('productImage')!.value" class="form-text text-danger clearfix">
+              <span class="pull-left"
+                >{{ editForm.get('productImageContentType')!.value }}, {{ byteSize(editForm.get('productImage')!.value) }}</span
+              >
+              <button
+                type="button"
+                (click)="clearInputImage('productImage', 'productImageContentType', 'file_productImage')"
+                class="btn btn-secondary btn-xs pull-right"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_productImage"
+              data-cy="productImage"
+              (change)="setFileData($event, 'productImage', true)"
+              accept="image/*"
+              jhiTranslate="entity.action.addimage"
+            />
+          </div>
+          <input
+            type="hidden"
+            class="form-control"
+            name="productImage"
+            id="field_productImage"
+            data-cy="productImage"
+            formControlName="productImage"
+          />
+          <input
+            type="hidden"
+            class="form-control"
+            name="productImageContentType"
+            id="field_productImageContentType"
+            formControlName="productImageContentType"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="coopcycleApp.product.merchant" for="field_merchant">Merchant</label>
+          <select class="form-control" id="field_merchant" data-cy="merchant" name="merchant" formControlName="merchant">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="merchantOption.id === editForm.get('merchant')!.value?.id ? editForm.get('merchant')!.value : merchantOption"
+              *ngFor="let merchantOption of merchantsSharedCollection; trackBy: trackMerchantById"
+            >
+              {{ merchantOption.merchantName }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
