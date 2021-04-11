@@ -162,12 +162,12 @@ jhipster:
     title: coopcycle API
     description: coopcycle API documentation
     version: 0.0.1
-    terms-of-service-url:
-    contact-name:
-    contact-url:
-    contact-email:
-    license: unlicensed
-    license-url:
+    terms-of-service-url: https://en.wikipedia.org/wiki/Terms_of_service
+    contact-name: Bob Dylan
+    contact-url: https://fr.wikipedia.org/wiki/Bob_Dylan
+    contact-email: bob.dylan@gmail.com
+    license: Open-Source
+    license-url: https://fr.wikipedia.org/wiki/Open_source
   security:
     content-security-policy: "default-src 'self'; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
 # ===================================================================
