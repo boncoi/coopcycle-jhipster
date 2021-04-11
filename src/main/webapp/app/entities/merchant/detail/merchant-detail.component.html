@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="merchant">
+      <h2 data-cy="merchantDetailsHeading"><span jhiTranslate="coopcycleApp.merchant.detail.title">Merchant</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ merchant.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.merchant.merchantName">Merchant Name</span></dt>
+        <dd>
+          <span>{{ merchant.merchantName }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.merchant.address">Address</span></dt>
+        <dd>
+          <span>{{ merchant.address }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.merchant.merchantType">Merchant Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'coopcycleApp.MerchantType.' + merchant.merchantType }}">{{ merchant.merchantType }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.merchant.imageProfil">Image Profil</span></dt>
+        <dd>
+          <div *ngIf="merchant.imageProfil">
+            <a (click)="openFile(merchant.imageProfil, merchant.imageProfilContentType)">
+              <img
+                [src]="'data:' + merchant.imageProfilContentType + ';base64,' + merchant.imageProfil"
+                style="max-width: 100%"
+                alt="merchant image"
+              />
+            </a>
+            {{ merchant.imageProfilContentType }}, {{ byteSize(merchant.imageProfil) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.merchant.mobilePhone">Mobile Phone</span></dt>
+        <dd>
+          <span>{{ merchant.mobilePhone }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.merchant.user">User</span></dt>
+        <dd>
+          <span>{{ merchant.user?.login }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.merchant.cooperative">Cooperative</span></dt>
+        <dd>
+          <div *ngIf="merchant.cooperative">
+            <a [routerLink]="['/cooperative', merchant.cooperative?.id, 'view']">{{ merchant.cooperative?.cooperativeName }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/merchant', merchant.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

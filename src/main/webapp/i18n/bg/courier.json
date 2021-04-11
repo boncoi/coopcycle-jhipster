@@ -1,0 +1,28 @@
+{
+  "coopcycleApp": {
+    "courier": {
+      "home": {
+        "title": "Couriers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Създайте нов Courier",
+        "createOrEditLabel": "Създайте или редактирайте Courier",
+        "notFound": "Couriers не са намерени"
+      },
+      "created": "Създаден е нов Courier с идентификатор {{ param }}",
+      "updated": "Courier с идентификатор {{ param }} e oбновен",
+      "deleted": "Courier с идентификатор {{ param }} е изтрит",
+      "delete": {
+        "question": "Наистина ли искате да изтриете Courier {{ id }}?"
+      },
+      "detail": {
+        "title": "Courier"
+      },
+      "id": "ID",
+      "working": "Working",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User",
+      "cooperative": "Cooperative"
+    }
+  }
+}

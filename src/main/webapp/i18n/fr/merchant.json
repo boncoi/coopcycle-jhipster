@@ -1,0 +1,31 @@
+{
+  "coopcycleApp": {
+    "merchant": {
+      "home": {
+        "title": "Merchants",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Merchant",
+        "createOrEditLabel": "Créer ou éditer un Merchant",
+        "notFound": "Aucun Merchant trouvé"
+      },
+      "created": "Un nouveau Merchant a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Merchant avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Merchant avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Merchant {{ id }} ?"
+      },
+      "detail": {
+        "title": "Merchant"
+      },
+      "id": "ID",
+      "merchantName": "Merchant Name",
+      "address": "Address",
+      "merchantType": "Merchant Type",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User",
+      "product": "Product",
+      "cooperative": "Cooperative"
+    }
+  }
+}

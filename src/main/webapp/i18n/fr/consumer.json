@@ -1,0 +1,27 @@
+{
+  "coopcycleApp": {
+    "consumer": {
+      "home": {
+        "title": "Consumers",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Consumer",
+        "createOrEditLabel": "Créer ou éditer un Consumer",
+        "notFound": "Aucun Consumer trouvé"
+      },
+      "created": "Un nouveau Consumer a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Consumer avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Consumer avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Consumer {{ id }} ?"
+      },
+      "detail": {
+        "title": "Consumer"
+      },
+      "id": "ID",
+      "address": "Address",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User"
+    }
+  }
+}

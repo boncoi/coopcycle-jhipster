@@ -1,0 +1,11 @@
+{
+  "coopcycleApp": {
+    "CommandStatus": {
+      "null": "",
+      "UNDERWAY": "UNDERWAY",
+      "READY": "READY",
+      "SHIPTMENT": "SHIPTMENT",
+      "DELIVERED": "DELIVERED"
+    }
+  }
+}

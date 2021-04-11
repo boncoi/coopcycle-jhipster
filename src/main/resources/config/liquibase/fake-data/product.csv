@@ -1,0 +1,11 @@
+id;product_id;product_name;product_type;price;product_image;product_image_content_type
+1;3090a85f-db9c-465e-bc55-cb21cecea3b7;withdrawal THX b;FOOD;4972;../fake-data/blob/hipster.png;image/png
+2;9aa7d6b9-615f-487e-9d48-a47309b82587;neutral;FOOD;16473;../fake-data/blob/hipster.png;image/png
+3;31c219bf-634f-417f-8f59-e3c0ded89f31;Canada;FOOD;52784;../fake-data/blob/hipster.png;image/png
+4;47a72ad2-f232-427e-b013-4eb9049cda2c;Consultant online;DRINK;30021;../fake-data/blob/hipster.png;image/png
+5;c3d21580-8cf1-47d4-b3fc-bc53675d0e96;Ergonomic Ergonomic;FOOD;10526;../fake-data/blob/hipster.png;image/png
+6;a2468fc2-0e58-4e8f-902a-a9ffcc915090;programming Algérie Rustic;FOOD;67786;../fake-data/blob/hipster.png;image/png
+7;14e5cd16-ef04-48eb-87c9-917f682e42af;system Practical;FOOD;29142;../fake-data/blob/hipster.png;image/png
+8;54cfd177-4b3f-4afc-a895-a23d52cdca35;Sausages;FOOD;2937;../fake-data/blob/hipster.png;image/png
+9;4986a103-837f-444d-92c6-59856522a237;Rwanda Account;DRINK;26850;../fake-data/blob/hipster.png;image/png
+10;710f4032-250f-4c18-82f4-086ec1e4878f;JBOD Gloves withdrawal;DRINK;85168;../fake-data/blob/hipster.png;image/png

@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="product">
+      <h2 data-cy="productDetailsHeading"><span jhiTranslate="coopcycleApp.product.detail.title">Product</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ product.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.product.productID">Product ID</span></dt>
+        <dd>
+          <span>{{ product.productID }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.product.productName">Product Name</span></dt>
+        <dd>
+          <span>{{ product.productName }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.product.productType">Product Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'coopcycleApp.ProductType.' + product.productType }}">{{ product.productType }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.product.price">Price</span></dt>
+        <dd>
+          <span>{{ product.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.product.productImage">Product Image</span></dt>
+        <dd>
+          <div *ngIf="product.productImage">
+            <a (click)="openFile(product.productImage, product.productImageContentType)">
+              <img
+                [src]="'data:' + product.productImageContentType + ';base64,' + product.productImage"
+                style="max-width: 100%"
+                alt="product image"
+              />
+            </a>
+            {{ product.productImageContentType }}, {{ byteSize(product.productImage) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.product.merchant">Merchant</span></dt>
+        <dd>
+          <div *ngIf="product.merchant">
+            <a [routerLink]="['/merchant', product.merchant?.id, 'view']">{{ product.merchant?.merchantName }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/product', product.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

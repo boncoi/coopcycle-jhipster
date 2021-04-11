@@ -1,0 +1,28 @@
+{
+  "coopcycleApp": {
+    "bill": {
+      "home": {
+        "title": "Bills",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Bill",
+        "createOrEditLabel": "Créer ou éditer un Bill",
+        "notFound": "Aucun Bill trouvé"
+      },
+      "created": "Un nouveau Bill a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Bill avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Bill avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Bill {{ id }} ?"
+      },
+      "detail": {
+        "title": "Bill"
+      },
+      "id": "ID",
+      "date": "Date",
+      "payment": "Payment",
+      "status": "Status",
+      "totalPrice": "Total Price",
+      "idBasket": "Id Basket"
+    }
+  }
+}

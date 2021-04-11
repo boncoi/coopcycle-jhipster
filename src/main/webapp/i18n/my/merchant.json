@@ -1,0 +1,31 @@
+{
+  "coopcycleApp": {
+    "merchant": {
+      "home": {
+        "title": "Merchants",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Merchant အသစ်ထည့်မည်",
+        "createOrEditLabel": "Merchant အသစ်ထည့်ခြင်း (သို့) ပြုပြင်ခြင်း",
+        "notFound": "No Merchants found"
+      },
+      "created": "{{ param }} အိုင်ဒီဖြင့် Merchant အသစ်တစ်ခုအား ထည့်ပြီးပါပြီ။",
+      "updated": "{{ param }} အိုင်ဒီဖြင့် Merchant တစ်ခုအား ပြုပြင်ပြီးပါပြီ။",
+      "deleted": "{{ param }} အိုင်ဒီဖြင့် Merchant တစ်ခုအား ဖျက်ပြီးပါပြီ။",
+      "delete": {
+        "question": "Merchant {{ id }} အား ဖျက်ပါမည်။ သေချာပါသလား?"
+      },
+      "detail": {
+        "title": "Merchant"
+      },
+      "id": "ID",
+      "merchantName": "Merchant Name",
+      "address": "Address",
+      "merchantType": "Merchant Type",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User",
+      "product": "Product",
+      "cooperative": "Cooperative"
+    }
+  }
+}

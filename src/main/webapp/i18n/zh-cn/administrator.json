@@ -1,0 +1,27 @@
+{
+  "coopcycleApp": {
+    "administrator": {
+      "home": {
+        "title": "Administrators",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Administrator",
+        "createOrEditLabel": "创建或编辑 Administrator",
+        "notFound": "No Administrators found"
+      },
+      "created": "Administrator {{ param }} 创建成功",
+      "updated": "Administrator {{ param }} 更新成功",
+      "deleted": "Administrator {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Administrator {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Administrator"
+      },
+      "id": "ID",
+      "levelOfAuthority": "Level Of Authority",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User"
+    }
+  }
+}

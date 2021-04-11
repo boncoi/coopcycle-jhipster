@@ -1,0 +1,28 @@
+{
+  "coopcycleApp": {
+    "courier": {
+      "home": {
+        "title": "Couriers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Ստեղծել նոր Courier",
+        "createOrEditLabel": "Ստեղծել կամ փոփոխել Courier",
+        "notFound": "No Couriers found"
+      },
+      "created": "Նոր Courier ստեղծված է {{ param }} նունացուցիչով",
+      "updated": "Courier թարմացվաց է {{ param }} նունացուցիչով",
+      "deleted": "Courier հեռացված է {{ param }}  նունացուցիչով",
+      "delete": {
+        "question": "Դուք վստահ ե՞ք, որ ցանկանում եք հեռացնել Courier {{ id }}?"
+      },
+      "detail": {
+        "title": "Courier"
+      },
+      "id": "ID",
+      "working": "Working",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User",
+      "cooperative": "Cooperative"
+    }
+  }
+}

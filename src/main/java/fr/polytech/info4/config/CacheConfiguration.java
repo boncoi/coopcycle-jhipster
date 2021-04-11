@@ -48,6 +48,20 @@ public class CacheConfiguration {
             createCache(cm, fr.polytech.info4.domain.User.class.getName());
             createCache(cm, fr.polytech.info4.domain.Authority.class.getName());
             createCache(cm, fr.polytech.info4.domain.User.class.getName() + ".authorities");
+            createCache(cm, fr.polytech.info4.domain.Consumer.class.getName());
+            createCache(cm, fr.polytech.info4.domain.Courier.class.getName());
+            createCache(cm, fr.polytech.info4.domain.Merchant.class.getName());
+            createCache(cm, fr.polytech.info4.domain.Merchant.class.getName() + ".products");
+            createCache(cm, fr.polytech.info4.domain.Cooperative.class.getName());
+            createCache(cm, fr.polytech.info4.domain.Cooperative.class.getName() + ".merchants");
+            createCache(cm, fr.polytech.info4.domain.Cooperative.class.getName() + ".couriers");
+            createCache(cm, fr.polytech.info4.domain.Administrator.class.getName());
+            createCache(cm, fr.polytech.info4.domain.Basket.class.getName());
+            createCache(cm, fr.polytech.info4.domain.Basket.class.getName() + ".idProducts");
+            createCache(cm, fr.polytech.info4.domain.Product.class.getName());
+            createCache(cm, fr.polytech.info4.domain.Product.class.getName() + ".idBaskets");
+            createCache(cm, fr.polytech.info4.domain.Bill.class.getName());
+            createCache(cm, fr.polytech.info4.domain.Notification.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

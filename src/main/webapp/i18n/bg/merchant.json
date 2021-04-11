@@ -1,0 +1,31 @@
+{
+  "coopcycleApp": {
+    "merchant": {
+      "home": {
+        "title": "Merchants",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Създайте нов Merchant",
+        "createOrEditLabel": "Създайте или редактирайте Merchant",
+        "notFound": "Merchants не са намерени"
+      },
+      "created": "Създаден е нов Merchant с идентификатор {{ param }}",
+      "updated": "Merchant с идентификатор {{ param }} e oбновен",
+      "deleted": "Merchant с идентификатор {{ param }} е изтрит",
+      "delete": {
+        "question": "Наистина ли искате да изтриете Merchant {{ id }}?"
+      },
+      "detail": {
+        "title": "Merchant"
+      },
+      "id": "ID",
+      "merchantName": "Merchant Name",
+      "address": "Address",
+      "merchantType": "Merchant Type",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User",
+      "product": "Product",
+      "cooperative": "Cooperative"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "coopcycleApp": {
+    "TypePayment": {
+      "null": "",
+      "CB": "CB",
+      "MASTERCARD": "MASTERCARD",
+      "VISA": "VISA",
+      "PAYPAL": "PAYPAL",
+      "APPLEPAY": "APPLEPAY",
+      "GOOGLEPAY": "GOOGLEPAY",
+      "BITCOIN": "BITCOIN",
+      "IZLY": "IZLY"
+    }
+  }
+}

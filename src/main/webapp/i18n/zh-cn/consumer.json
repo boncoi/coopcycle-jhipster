@@ -1,0 +1,27 @@
+{
+  "coopcycleApp": {
+    "consumer": {
+      "home": {
+        "title": "Consumers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Consumer",
+        "createOrEditLabel": "创建或编辑 Consumer",
+        "notFound": "No Consumers found"
+      },
+      "created": "Consumer {{ param }} 创建成功",
+      "updated": "Consumer {{ param }} 更新成功",
+      "deleted": "Consumer {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Consumer {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Consumer"
+      },
+      "id": "ID",
+      "address": "Address",
+      "imageProfil": "Image Profil",
+      "mobilePhone": "Mobile Phone",
+      "user": "User"
+    }
+  }
+}

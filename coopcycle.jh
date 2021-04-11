@@ -1,0 +1,89 @@
+
+entity Consumer {
+    address String required
+    imageProfil ImageBlob
+    mobilePhone String required
+}
+entity Courier {
+    working Boolean required
+    imageProfil ImageBlob
+    mobilePhone String required
+}
+entity Merchant{
+    merchantName String required
+    address String required
+    merchantType MerchantType required
+    imageProfil ImageBlob
+    mobilePhone String required
+}
+enum MerchantType {
+    RESTAURANT, CRAFTMAN
+}
+entity Cooperative{
+    cooperativeName String required
+}
+entity Administrator{
+    levelOfAuthority Integer required
+    imageProfil ImageBlob
+    mobilePhone String required
+}
+entity Basket{
+    idBasket UUID required
+}
+entity Product{
+    productID UUID required
+    productName String required
+    productType ProductType
+    price Float min(0) required
+    productImage ImageBlob
+}
+entity Bill{
+    date Instant  required
+    payment TypePayment required
+    status CommandStatus required
+    totalPrice Float min(0) required
+}
+enum CommandStatus {
+    UNDERWAY, READY, SHIPTMENT, DELIVERED
+}
+entity Notification{
+    date Instant required
+    message String required
+    notifType NotificationType
+}
+enum NotificationType {
+    SMS, EMAIL, INAPP
+}
+enum TypePayment {
+    CB, MASTERCARD, VISA, PAYPAL, APPLEPAY, GOOGLEPAY, BITCOIN, IZLY
+}
+enum ProductType {
+    FOOD, DRINK
+}
+relationship OneToOne {
+    Consumer{user(login)} to User
+    Administrator{user(login)} to User
+    Courier{user(login)} to User
+    Merchant{user(login)} to User
+    Bill{idBasket(idBasket)} to Basket
+    Basket to User
+}
+/**
+ * One to many relationship.
+ */
+relationship OneToMany {
+    Cooperative to Merchant{cooperative(cooperativeName)}
+    Cooperative to Courier{cooperative(cooperativeName)}
+    Merchant to Product{merchant(merchantName)}
+}
+/**
+ * Many to many relationship.
+ */
+relationship ManyToMany {
+    Basket{idProduct(productID)} to Product{idBasket(idBasket)}
+}
+// paginate * with infinite-scroll
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+// Set service options to all except few
+//service all with serviceImpl except Employee, Job
